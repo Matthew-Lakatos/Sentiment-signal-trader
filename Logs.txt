@@ -1,0 +1,794 @@
+FINANCE AI — DEVELOPMENT JOURNAL
+Version: Post-Governance / Post-Financial Conditioning
+Current Size: 115 Modules · 32,144+ Lines · 10 Migrations · 156 Files
+Status: Pre-Shadow Deployment Validation
+
+NOTE:
+This is a reconstructed development history assembled from project milestones,
+architecture evolution, implementation logs, bug-fix records, and roadmap
+completion notes. Dates are approximate and intended for project
+documentation rather than as a literal day-by-day historical record.
+
+====================================================================
+YEAR 1 — FOUNDATIONS
+====================================================================
+
+Q3 2023 — Initial Conception
+
+Objective:
+Build a system capable of identifying financially relevant information
+from public sources before market participants fully process it.
+
+Initial assumptions:
+
+- Markets are not perfectly efficient.
+- Information diffusion takes time.
+- Narrative and sentiment influence price.
+- News can be converted into quantitative signals.
+
+Early prototypes:
+
+- RSS scraping
+- Headline collection
+- Rule-based sentiment scoring
+- SQLite storage
+- Simple event logs
+
+Primary challenge:
+
+Separating financially relevant information from general news noise.
+
+Lessons:
+
+- Raw sentiment alone produces weak signals.
+- Context matters more than polarity.
+
+====================================================================
+
+Q4 2023 — First Signal Framework
+
+Built:
+
+- News scraper
+- Event database
+- Basic sentiment engine
+- Signal ranking prototype
+
+Architecture shift:
+
+From:
+
+"News scraper"
+
+To:
+
+"Event intelligence pipeline"
+
+Introduced:
+
+- Event abstraction
+- Signal scores
+- Historical event storage
+
+Findings:
+
+- Positive and negative articles were not equally informative.
+- Materiality mattered more than sentiment magnitude.
+
+First concept of:
+
+- Materiality scoring
+- Event importance weighting
+
+====================================================================
+
+Q1 2024 — Narrative Research
+
+Research focus:
+
+How narratives propagate through markets.
+
+Built:
+
+- Topic clustering
+- Entity extraction
+- Narrative grouping
+
+Questions explored:
+
+- How quickly do narratives spread?
+- Can repeated stories be ignored?
+- Can novelty be measured?
+
+Introduced:
+
+- Novelty score
+- Narrative persistence
+- Attention tracking
+
+Findings:
+
+Many articles are repetitions.
+
+True edge comes from:
+
+- new information
+- contradictions
+- expectation changes
+
+====================================================================
+
+Q2 2024 — Database Expansion
+
+Built:
+
+- PostgreSQL migration path
+- Historical event archive
+- Structured entity tables
+
+Introduced:
+
+- Time-series thinking
+- Event replay capability
+
+Major insight:
+
+Backtesting requires preserving historical state.
+
+Without state preservation:
+
+Historical results become unreliable.
+
+====================================================================
+
+Q3 2024 — NLP Expansion
+
+Research:
+
+Financial NLP
+
+Implemented:
+
+- FinBERT evaluation
+- Sentiment classification
+- Confidence scoring
+
+Transition:
+
+Rule-based sentiment
+→
+Transformer-based sentiment
+
+Benefits:
+
+- Context awareness
+- Financial language understanding
+- Better signal consistency
+
+====================================================================
+
+Q4 2024 — Event Attribution Research
+
+Problem:
+
+Why did a signal work?
+
+Introduced:
+
+- Attribution decomposition
+- Signal component analysis
+
+Early components:
+
+- Sentiment
+- Novelty
+- Surprise
+
+Research goal:
+
+Move beyond:
+
+"Signal worked"
+
+Toward:
+
+"Signal worked because X"
+
+====================================================================
+YEAR 2 — RESEARCH PLATFORM EVOLUTION
+====================================================================
+
+Q1 2025 — Knowledge Graph Architecture
+
+Research direction:
+
+Information relationships
+
+Built:
+
+- Entity graph
+- Topic graph
+- Relationship storage
+
+Goal:
+
+Identify indirect information flow.
+
+Example:
+
+Regulatory action
+→ Supplier
+→ Customer
+→ Sector
+
+Early graph remained:
+
+Co-occurrence based.
+
+Future plans:
+
+Temporal causality.
+
+====================================================================
+
+Q2 2025 — Market State Concepts
+
+Major realization:
+
+Signals behave differently in different regimes.
+
+Built:
+
+- VIX integration
+- Yield curve analysis
+- Regime classification
+
+Initial regimes:
+
+- Risk On
+- Neutral
+- Risk Off
+
+Architecture changed from:
+
+Static signal model
+
+To:
+
+Regime-conditioned signal model
+
+====================================================================
+
+Q3 2025 — Execution Research
+
+Problem:
+
+Predictions alone do not create returns.
+
+Built:
+
+- Position lifecycle framework
+- Trade simulation
+- Slippage modelling
+
+Introduced:
+
+- Entry logic
+- Exit logic
+- P&L tracking
+
+Lessons:
+
+Many promising signals disappear after costs.
+
+====================================================================
+
+Q4 2025 — Calibration Framework
+
+Focus:
+
+Signal validation
+
+Built:
+
+- Rolling IC
+- Walk-forward testing
+- Ensemble calibration
+
+Metrics adopted:
+
+- Information Coefficient
+- Sharpe Ratio
+- Hit Rate
+- Attribution quality
+
+Mindset shift:
+
+From:
+
+"Looks good"
+
+To:
+
+"Can be measured"
+
+====================================================================
+YEAR 3 — RAPID EXPANSION
+====================================================================
+
+Q1 2026 — Phase 1
+
+Infrastructure consolidation.
+
+Built:
+
+- Central pipeline
+- Database migrations
+- API layer
+- Monitoring foundation
+
+Objective:
+
+Create a scalable architecture.
+
+====================================================================
+
+Q1 2026 — Phase 2
+
+Research expansion.
+
+Built:
+
+- Enhanced signal stack
+- Calibration improvements
+- Experiment tracking
+
+Introduced:
+
+- Ensemble methods
+- ML experimentation
+- Attribution reporting
+
+====================================================================
+
+Q2 2026 — Phase 3
+
+Major additions:
+
+Data Connectors
+
+Implemented:
+
+- FRED
+- SEC EDGAR
+- Options chains
+
+Added:
+
+Macro factors
+
+- Fed Funds
+- CPI
+- PCE
+- Credit spreads
+- Consumer confidence
+
+Options factors:
+
+- Put/Call ratio
+- IV skew
+- Max pain
+- Term structure
+
+Attribution framework expanded.
+
+====================================================================
+
+PHASE 3 BUG DISCOVERY
+
+Critical finding:
+
+Attribution decomposition failed accounting identity.
+
+Problem:
+
+Materiality and credibility stored separately from attribution fields.
+
+Result:
+
+Stored attribution components did not sum to realized P&L.
+
+Fix:
+
+Collapsed:
+
+Materiality × Credibility
+
+Into sentiment component.
+
+Outcome:
+
+Attribution became exhaustive.
+
+====================================================================
+
+Q2 2026 — Phase 4
+
+Machine learning integration.
+
+Added:
+
+- OLS
+- Ridge
+- LGBM
+- XGBoost
+- Recursive Least Squares
+
+Goals:
+
+- Weight learning
+- Adaptive calibration
+- Signal blending
+
+Extensive testing performed.
+
+====================================================================
+
+POST PHASE 4 REVIEW
+
+Major conclusion:
+
+System was becoming:
+
+Research platform
+rather than
+simple trading model.
+
+New roadmap generated.
+
+Core missing categories:
+
+- Governance
+- Risk control
+- Deployment safety
+
+====================================================================
+
+Q2-Q3 2026 — GOVERNANCE ERA
+
+Positioning Engine
+
+Built:
+
+- Short interest analysis
+- Crowding estimation
+- Squeeze probability
+- Fragility metrics
+
+====================================================================
+
+Liquidity Engine
+
+Built:
+
+- Amihud illiquidity
+- Spread proxies
+- Correlation stress
+- Volume anomalies
+
+Later expanded:
+
+- Credit spreads
+- MOVE proxy
+- FX volatility
+- VIX term structure
+
+====================================================================
+
+Governance Engine
+
+Created:
+
+governance_confidence
+
+Inputs:
+
+- IC
+- Sharpe
+- Drift
+- Liquidity
+- Positioning
+- Regime
+
+Later expanded:
+
+- governance_uncertainty
+- governance_stability
+
+====================================================================
+
+Risk Throttle
+
+Introduced modes:
+
+FULL
+CAUTIOUS
+REDUCED
+DEFENSIVE
+SUSPENDED
+
+Added:
+
+- Hysteresis
+- Dwell times
+- Memory decay
+
+====================================================================
+
+Kill Switch
+
+Implemented:
+
+ACTIVE
+WARNING
+SUSPENDED
+KILLED
+
+Features:
+
+- Exponential backoff
+- Cooldowns
+- Recovery logic
+- Audit trail
+
+====================================================================
+
+ORCHESTRATION ERA
+
+Built:
+
+pipeline_orchestrator.py
+
+Formal states:
+
+INIT
+INGEST
+SCORE
+GOVERN
+THROTTLE
+EXECUTE
+LOG
+SUSPEND
+
+====================================================================
+
+SHADOW PORTFOLIO ERA
+
+Built:
+
+- Position tracking
+- Lifecycle logging
+- Governance capture
+- Exposure validation
+
+Initially discovered:
+
+- Not wired into execution stage
+- Missing ticker resolution
+- Missing exit scheduling
+
+Subsequently fixed.
+
+====================================================================
+
+PERFORMANCE ERA
+
+Optimization targets identified.
+
+Implemented:
+
+FAISS
+Fast Tokenizers
+ONNX Support
+HNSW Indexes
+Incremental Amihud
+
+Performance improvements:
+
+Embedding Search:
+~200× faster
+
+Tokenization:
+3-5× faster
+
+Rolling IC:
+~50× faster
+
+HTML Parsing:
+5-10× faster
+
+====================================================================
+
+FINANCIAL CONDITIONING ERA
+
+Major realization:
+
+Text-only systems suffer base-rate blindness.
+
+Integrated:
+
+Price Features
+
+- Momentum
+- Volatility
+- Beta
+- Distance from highs
+
+Fundamentals
+
+- PE
+- Debt ratios
+- FCF yield
+
+Earnings
+
+- EPS Surprise
+- SUE
+- Revision momentum
+
+Macro
+
+- FRED
+- ECB
+- Treasury
+- CBOE
+
+Objective:
+
+Contrast:
+
+Public belief
+
+Against:
+
+Market expectations
+and
+Financial reality
+
+====================================================================
+
+CRITICAL BUG AUDIT
+
+Six major statistical bugs discovered.
+
+Examples:
+
+1. Surprise double-signing
+2. Factor neutralization formula
+3. Sentiment standard deviation inflation
+4. Sector classifier corruption
+5. Small-sample percentile ranking
+6. Earnings ordering bug
+
+Most damaging:
+
+Bug #3
+
+Impact:
+
+Surprise z-scores inflated ~5.9×
+
+Required:
+
+Complete recalibration.
+
+====================================================================
+
+CURRENT STATE
+
+Architecture:
+
+Layer 1:
+Data Acquisition
+
+Layer 2:
+NLP + Event Understanding
+
+Layer 3:
+Alpha Generation
+
+Layer 4:
+Governance
+
+Layer 5:
+Execution
+
+Layer 6:
+Research Infrastructure
+
+Current Size:
+
+115 modules
+32,144+ lines
+10 migrations
+156 files
+
+Languages:
+
+- Python
+- C++
+- SQL
+
+Capabilities:
+
+- Multi-source ingestion
+- Financial NLP
+- Earnings surprise analysis
+- Financial conditioning
+- Governance control
+- Liquidity monitoring
+- Positioning analysis
+- Shadow portfolio
+- Attribution analysis
+- Scenario stress testing
+- Historical calibration
+- Feature attribution
+- State versioning
+
+====================================================================
+
+OPEN QUESTIONS
+
+The system is now largely an engineering-complete platform.
+
+Remaining unknowns are empirical.
+
+Key questions:
+
+1.
+Can calibration learn stable weights?
+
+2.
+Does shadow deployment produce positive IC?
+
+3.
+Do signals survive realistic execution costs?
+
+4.
+Does governance improve risk-adjusted performance?
+
+5.
+Can alpha persist out-of-sample?
+
+6.
+Is there a genuine edge after correcting all discovered bugs?
+
+====================================================================
+
+CURRENT DEVELOPMENT STAGE
+
+Engineering:
+Largely complete
+
+Architecture:
+Mature
+
+Governance:
+Implemented
+
+Research tooling:
+Implemented
+
+Execution simulation:
+Implemented
+
+Validation:
+In progress
+
+Primary remaining task:
+
+Demonstrate a persistent, statistically defensible edge
+through calibration, shadow deployment,
+and out-of-sample evaluation.
+
+END OF PROJECT JOURNAL
